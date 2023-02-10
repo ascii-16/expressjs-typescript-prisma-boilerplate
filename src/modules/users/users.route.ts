@@ -17,13 +17,20 @@ users.get('/', controller.getAllUsers);
  * @property {string} cognitoId.required - cognito id
  * @property {string} phone - phone number
  */
-
+/**
+ * User
+ * @typedef {object} User
+ * @property {string} email - email of user
+ * @property {string} name - name of user
+ * @property {string} cognitoId - cognito id
+ * @property {string} phone - phone number
+ */
 /**
  * POST /users/create
  * @summary Create user
  * @tags users
  * @param {CreateUserBody} request.body.required
- * @return {object} 200 - user response
+ * @return {User} 201 - user created
  */
 users.post(
   '/create',
