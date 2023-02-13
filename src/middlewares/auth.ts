@@ -1,7 +1,7 @@
 import { NextFunction, Request, Response } from 'express';
 
 export const verifyAuthToken = async (
-  // Remove underscore of params once you using them
+  // Remove underscore of params once you start using them
   _req: Request,
   _res: Response,
   _next: NextFunction
