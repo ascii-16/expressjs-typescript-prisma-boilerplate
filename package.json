@@ -1,7 +1,7 @@
 {
-  "name": "phi-server",
+  "name": "expressjs-typescript-prisma-boilerplate",
   "version": "1.0.0",
-  "description": "express server for phi",
+  "description": "expressjs typescript boilerplate with prisma",
   "main": "index.ts",
   "scripts": {
     "prepare": "is-ci || husky install",
