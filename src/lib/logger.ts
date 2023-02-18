@@ -1,3 +1,4 @@
+import appConfig from '@/config/app.config';
 import { LOG_DIR } from '@/utils/constants';
 import { existsSync, mkdirSync } from 'fs';
 import {
@@ -10,17 +11,21 @@ import {
 } from 'winston';
 import environment from './environment';
 
-if (!existsSync(LOG_DIR)) {
-  mkdirSync(LOG_DIR);
+const {
+  logs: { dir: logDir, logFile, errorLogFile },
+} = appConfig;
+
+if (!existsSync(logDir)) {
+  mkdirSync(logDir);
 }
 
 const logTransports: transport[] = [new transports.Console()];
 const fileTransports: transport[] = [
   new transports.File({
-    filename: `${LOG_DIR}/error.log`,
+    filename: `${LOG_DIR}/${errorLogFile}`,
     level: 'error',
   }),
-  new transports.File({ filename: `${LOG_DIR}/app.log` }),
+  new transports.File({ filename: `${LOG_DIR}/${logFile}` }),
 ];
 
 if (!environment.isLocal()) {
