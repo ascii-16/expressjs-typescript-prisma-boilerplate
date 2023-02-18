@@ -11,7 +11,9 @@ export class ApiError extends Error implements IApiError {
   constructor(statusCode: number, message: string, rawErrors?: string[]) {
     super(message);
     this.statusCode = statusCode;
-    if (rawErrors != null) this.rawErrors = rawErrors;
+    if (rawErrors) {
+      this.rawErrors = rawErrors;
+    }
     Error.captureStackTrace(this, this.constructor);
   }
 }
