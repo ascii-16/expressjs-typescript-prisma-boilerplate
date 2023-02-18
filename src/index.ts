@@ -9,11 +9,13 @@ configDotenv();
 
 const prisma = new PrismaClient();
 
-server.listen(process.env.PORT !== '' ? process.env.PORT : '5000', () => {
+server.listen(process.env.PORT, () => {
   const { port, env, appUrl: _appUrl } = environment;
-  const { apiBasePath, apiVersion } = appConfig;
+  const {
+    api: { basePath, version },
+  } = appConfig;
   const appUrl = `${_appUrl}:${port}`;
-  const apiUrl = `${appUrl}/${apiBasePath}/${apiVersion}/${env}`;
+  const apiUrl = `${appUrl}/${basePath}/${version}/${env}`;
   printAppInfo(port, env, appUrl, apiUrl);
 });
 

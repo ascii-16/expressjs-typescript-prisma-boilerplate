@@ -40,9 +40,11 @@ class App {
   private setRoutes(): void {
     this.express.use('/', home);
 
-    const { apiVersion } = appConfig;
+    const {
+      api: { version },
+    } = appConfig;
     const { env } = environment;
-    this.express.use(`/${apiVersion}/${env}`, routes);
+    this.express.use(`/${version}/${env}`, routes);
   }
 
   private setErrorHandler(): void {

@@ -1,10 +1,8 @@
-import { Environments } from '@/utils/enums/environment.enum';
-
 interface AppConfig {
-  port: number;
-  apiBasePath: string;
-  apiVersion: string;
-  env: Environments;
+  api: {
+    basePath: string;
+    version: string;
+  };
   docs: {
     swaggerUIPath: string;
     apiDocsPath: string;
@@ -12,10 +10,10 @@ interface AppConfig {
 }
 
 const appConfig: AppConfig = {
-  port: +process.env.PORT ?? 5000,
-  apiBasePath: 'api',
-  apiVersion: 'v1',
-  env: process.env.NODE_ENV ?? Environments.LOCAL,
+  api: {
+    basePath: 'api',
+    version: 'v1',
+  },
   docs: {
     swaggerUIPath: '/v1/swagger',
     apiDocsPath: '/v1/api-docs',

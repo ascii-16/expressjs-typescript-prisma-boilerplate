@@ -7,7 +7,6 @@ import {
   EnvironmentFile,
   Environments,
 } from '@/utils/enums/environment.enum';
-import appConfig from '@/config/app.config';
 import envValidationConfig from '@/config/env-validation.config';
 
 export interface IEnvironment {
@@ -26,8 +25,8 @@ class Environment implements IEnvironment {
   private _appUrl: string;
 
   constructor(nodeEnv?: Environments) {
-    this.port = appConfig.port;
-    this.setEnvironment(nodeEnv ?? appConfig.env);
+    this.port = +process.env.PORT;
+    this.setEnvironment(nodeEnv ?? Environments.LOCAL);
   }
 
   get env() {
