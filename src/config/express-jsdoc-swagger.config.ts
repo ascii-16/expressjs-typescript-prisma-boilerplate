@@ -4,8 +4,7 @@ import appConfig from './app.config';
 
 const { env, port } = environment;
 const {
-  apiBasePath,
-  apiVersion,
+  api: { basePath, version },
   docs: { swaggerUIPath, apiDocsPath },
 } = appConfig;
 const baseDir = path.join(__dirname, '../../');
@@ -27,10 +26,10 @@ const expressJSDocSwaggerConfig = {
           default: port,
         },
         basePath: {
-          default: apiBasePath,
+          default: basePath,
         },
         version: {
-          default: apiVersion,
+          default: version,
         },
         env: {
           default: env,
