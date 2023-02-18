@@ -50,6 +50,29 @@ Build app
   npm run build
 ```
 
+Lint with eslint
+
+```bash
+  npm run lint
+```
+
+Lint and fix with eslint
+
+```bash
+  npm run lint:fix
+```
+
+Format with prettier
+
+```bash
+  npm run format
+```
+
+Genarate prisma types
+
+```bash
+  npm run prisma:genarate
+```
 
 ## License
 
