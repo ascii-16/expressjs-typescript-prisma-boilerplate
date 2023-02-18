@@ -74,6 +74,12 @@ Genarate prisma types
   npm run prisma:genarate
 ```
 
+Commitizen
+
+```bash
+  npm run commit
+```
+
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
