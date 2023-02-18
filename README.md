@@ -4,6 +4,7 @@
 - eslint + prettier
 - husky
 - ts-node-dev
+- swagger
 - commitizen
 
 
