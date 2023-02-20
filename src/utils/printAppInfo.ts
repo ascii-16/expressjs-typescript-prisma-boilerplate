@@ -8,6 +8,9 @@ export const printAppInfo = (
   appUrl: string,
   apiUrl: string
 ) => {
+  const {
+    docs: { swaggerUIPath, apiDocsPath },
+  } = appConfig;
   console.log('------------------------------------------------');
   console.log('🚀 Server successfully started');
   console.log('------------------------------------------------');
@@ -15,8 +18,8 @@ export const printAppInfo = (
   console.log(`✅ ENV: ${env}\n`);
   console.log(`✅ App URL: ${appUrl}\n`);
   console.log(`✅ API URL: ${apiUrl}\n`);
-  console.log(`✅ Swagger: ${appUrl}${appConfig.docs.swaggerUIPath}\n`);
-  console.log(`✅ API Specs: ${appUrl}${appConfig.docs.apiDocsPath}`);
+  console.log(`✅ Swagger: ${appUrl}${swaggerUIPath}\n`);
+  console.log(`✅ API Specs: ${appUrl}${apiDocsPath}`);
   console.log('------------------------------------------------\n');
   if (!environment.isLocal()) {
     logWithoutConsole({
