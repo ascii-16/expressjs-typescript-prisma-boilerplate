@@ -7,9 +7,6 @@ export class CreateUserDto {
   @IsString()
   name: string;
 
-  @IsString()
-  cognitoId: string;
-
   @IsOptional()
   phone: string;
 }
