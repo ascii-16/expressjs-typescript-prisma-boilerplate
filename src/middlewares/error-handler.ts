@@ -3,6 +3,7 @@ import logger from '@/lib/logger';
 import util from 'util';
 import { type NextFunction, type Request, type Response } from 'express';
 import environment from '@/lib/environment';
+import { HttpStatusCode } from 'axios';
 
 interface ErrorBody {
   success: false;
@@ -17,8 +18,6 @@ const errorHandler = (
   res: Response,
   next: NextFunction
 ) => {
-  const status: number = err.statusCode;
-
   logger.error(`Request Error:
         \nError:\n${JSON.stringify(err)}
         \nHeaders:\n${util.inspect(req.headers)}
@@ -26,6 +25,7 @@ const errorHandler = (
         \nQuery:\n${util.inspect(req.query)}
         \nBody:\n${util.inspect(req.body)}`);
 
+  const status: number = err.statusCode ?? HttpStatusCode.InternalServerError;
   const errorBody: ErrorBody = {
     success: false,
     message: err.message,
