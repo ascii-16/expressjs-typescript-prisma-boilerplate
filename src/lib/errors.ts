@@ -26,12 +26,18 @@ export class HttpBadRequestError extends ApiError {
 
 export class HttpInternalServerError extends ApiError {
   constructor(message: string, errors?: string[]) {
-    super(httpStatus.NON_AUTHORITATIVE_INFORMATION, message, errors);
+    super(httpStatus.INTERNAL_SERVER_ERROR, message, errors);
   }
 }
 
 export class HttpUnAuthorizedError extends ApiError {
   constructor(message: string) {
     super(httpStatus.UNAUTHORIZED, message);
+  }
+}
+
+export class HttpNotFoundError extends ApiError {
+  constructor(message: string, errors?: string[]) {
+    super(httpStatus.NOT_FOUND, message, errors);
   }
 }
