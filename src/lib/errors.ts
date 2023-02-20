@@ -1,4 +1,4 @@
-import httpStatus from 'http-status';
+import { HttpStatusCode } from 'axios';
 
 export interface IApiError extends Error {
   statusCode: number;
@@ -20,24 +20,24 @@ export class ApiError extends Error implements IApiError {
 
 export class HttpBadRequestError extends ApiError {
   constructor(message: string, errors: string[]) {
-    super(httpStatus.BAD_REQUEST, message, errors);
+    super(HttpStatusCode.BadRequest, message, errors);
   }
 }
 
 export class HttpInternalServerError extends ApiError {
   constructor(message: string, errors?: string[]) {
-    super(httpStatus.INTERNAL_SERVER_ERROR, message, errors);
+    super(HttpStatusCode.InternalServerError, message, errors);
   }
 }
 
 export class HttpUnAuthorizedError extends ApiError {
   constructor(message: string) {
-    super(httpStatus.UNAUTHORIZED, message);
+    super(HttpStatusCode.Unauthorized, message);
   }
 }
 
 export class HttpNotFoundError extends ApiError {
   constructor(message: string, errors?: string[]) {
-    super(httpStatus.NOT_FOUND, message, errors);
+    super(HttpStatusCode.NotFound, message, errors);
   }
 }

@@ -3,7 +3,7 @@ import { type users } from '@prisma/client';
 import { CustomResponse } from '@/types/common';
 import UserService from './users.service';
 import Api from '@/lib/api';
-import httpStatus from 'http-status';
+import { HttpStatusCode } from 'axios';
 
 export default class UserController extends Api {
   private readonly userService = new UserService();
@@ -15,7 +15,7 @@ export default class UserController extends Api {
   ) => {
     try {
       const user = await this.userService.createUser(req.body);
-      this.send(res, user, httpStatus.CREATED, 'createUser');
+      this.send(res, user, HttpStatusCode.Created, 'createUser');
     } catch (e) {
       next(e);
     }
