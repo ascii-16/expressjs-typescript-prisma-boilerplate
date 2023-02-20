@@ -44,7 +44,7 @@ class App {
       api: { version },
     } = appConfig;
     const { env } = environment;
-    this.express.use(`/${version}/${env}`, routes);
+    this.express.use(`/api/${version}/${env}`, routes);
   }
 
   private setErrorHandler(): void {

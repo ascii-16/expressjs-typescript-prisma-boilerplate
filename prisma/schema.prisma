@@ -14,6 +14,5 @@ model users {
   id String @id @db.Uuid @default(uuid())
   email String @db.VarChar(255)
   name  String @db.VarChar(255)
-  cognitoId  String @db.VarChar(255)
   phone String? @db.VarChar(255)
 }
