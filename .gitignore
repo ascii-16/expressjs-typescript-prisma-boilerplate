@@ -36,7 +36,11 @@ node_modules/
 
 # Environmental variables
 .env
-.env.*
+.env.local
+.env.dev
+.env.test
+.env.stage
+.env.prod
 
 # Test reports
 /test-reports
