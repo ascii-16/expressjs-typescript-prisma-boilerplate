@@ -3,7 +3,7 @@ import { str, bool, num } from 'envalid';
 
 const envValidationConfig = {
   NODE_ENV: str({
-    default: Environments.LOCAL,
+    default: Environments.DEV,
     choices: [...Object.values(Environments)],
   }),
   CUSTOM_ENV: bool({ default: false }),
