@@ -36,7 +36,6 @@ node_modules/
 
 # Environmental variables
 .env
-.env.local
 .env.dev
 .env.test
 .env.stage

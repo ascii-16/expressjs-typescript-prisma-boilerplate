@@ -16,7 +16,6 @@ export interface IEnvironment {
   isDev: () => boolean;
   isTest: () => boolean;
   isStage: () => boolean;
-  isLocal: () => boolean;
 }
 
 class Environment implements IEnvironment {
@@ -26,7 +25,7 @@ class Environment implements IEnvironment {
 
   constructor() {
     this.port = +process.env.PORT;
-    this.setEnvironment(process.env.NODE_ENV ?? Environments.LOCAL);
+    this.setEnvironment(process.env.NODE_ENV ?? Environments.DEV);
   }
 
   get env() {
@@ -59,7 +58,10 @@ class Environment implements IEnvironment {
     const defaultEnvPath = path.resolve(rootDir, EnvironmentFile.DEFAULT);
     if (!fs.existsSync(envPath) && !fs.existsSync(defaultEnvPath)) {
       throw new Error(
-        `${EnvironmentFile.DEFAULT} and ${EnvironmentFile[key]} is missing in root directory. Please add`
+        ` \n======================================================================================
+          \n${EnvironmentFile.DEFAULT} and ${EnvironmentFile[key]} is missing in root directory. One of them is required
+          \n======================================================================================
+        `
       );
     }
     return fs.existsSync(envPath) ? envPath : defaultEnvPath;
@@ -71,7 +73,7 @@ class Environment implements IEnvironment {
     this.appUrl = env.APP_BASE_URL;
   }
 
-  public setEnvironment(env = Environments.LOCAL): void {
+  public setEnvironment(env = Environments.DEV): void {
     this.env = env;
 
     const envKey = Object.keys(Environments).find(
@@ -101,10 +103,6 @@ class Environment implements IEnvironment {
 
   public isTest() {
     return this.env === Environments.TEST;
-  }
-
-  public isLocal() {
-    return this.env === Environments.LOCAL;
   }
 }
 

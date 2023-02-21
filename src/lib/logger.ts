@@ -28,7 +28,7 @@ const fileTransports: transport[] = [
   new transports.File({ filename: `${LOG_DIR}/${logFile}` }),
 ];
 
-if (!environment.isLocal()) {
+if (!environment.isDev()) {
   logTransports.push(...fileTransports);
 }
 

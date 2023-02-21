@@ -21,7 +21,7 @@ export const printAppInfo = (
   console.log(`✅ Swagger: ${appUrl}${swaggerUIPath}\n`);
   console.log(`✅ API Specs: ${appUrl}${apiDocsPath}`);
   console.log('------------------------------------------------\n');
-  if (!environment.isLocal()) {
+  if (!environment.isDev()) {
     logWithoutConsole({
       level: 'info',
       message: `Server started at ${appUrl}`,

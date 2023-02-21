@@ -32,7 +32,7 @@ const errorHandler = (
     rawErrors: err.rawErrors,
   };
 
-  if (environment.isLocal()) {
+  if (environment.isDev()) {
     errorBody.stack = err.stack;
   }
 

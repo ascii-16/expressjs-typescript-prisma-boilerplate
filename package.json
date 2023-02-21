@@ -7,7 +7,7 @@
     "prepare": "is-ci || husky install",
     "build": "npx prisma generate && tsc --build --pretty --verbose --diagnostics --listEmittedFiles && tsc-alias -p tsconfig.json",
     "start": "FORCE_COLOR=2 node ./dist/index.js",
-    "dev": "npx prisma generate && ts-node-dev -r tsconfig-paths/register --respawn --transpile-only --exit-child --watch src src/index.ts",
+    "dev": "npx prisma generate && NODE_ENV=development ts-node-dev -r tsconfig-paths/register --respawn --transpile-only --exit-child --watch src src/index.ts",
     "prod": "npm run build && npm run start",
     "clean": "rm -rf node_modules coverage dist .nyc_output",
     "lint": "eslint --ignore-path .eslintignore ./src --ext .ts,.js",

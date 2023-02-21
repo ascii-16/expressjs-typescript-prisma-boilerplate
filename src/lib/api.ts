@@ -10,7 +10,7 @@ abstract class Api {
     statusCode: number = HttpStatusCode.Ok,
     message: string = 'success'
   ) {
-    if (!environment.isLocal()) {
+    if (!environment.isDev()) {
       logger.info(JSON.stringify(data, null, 2));
     }
 
