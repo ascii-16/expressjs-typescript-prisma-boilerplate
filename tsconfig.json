@@ -11,7 +11,7 @@
     "sourceMap": true,
     "experimentalDecorators": true,
     "baseUrl": ".",
-    "rootDir": "./",
+    "rootDir": "src",
     "strictNullChecks": true,
     "paths": {
       "@/*": [
@@ -25,7 +25,6 @@
   },
   "include": [
     "src/**/*.ts",
-    "tests/**/*.ts"
   ],
   "exclude": [
     "node_modules",
