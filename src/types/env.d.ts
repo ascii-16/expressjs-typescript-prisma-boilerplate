@@ -9,7 +9,6 @@ declare global {
       DATABASE_URL: string;
       AWS_REGION: string;
       COGNITO_POOL_ID: string;
-      CUSTOM_ENV?: string;
     }
   }
 }

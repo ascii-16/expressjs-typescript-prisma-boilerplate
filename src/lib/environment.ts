@@ -24,9 +24,9 @@ class Environment implements IEnvironment {
   private _env: Environments;
   private _appUrl: string;
 
-  constructor(nodeEnv?: Environments) {
+  constructor() {
     this.port = +process.env.PORT;
-    this.setEnvironment(nodeEnv ?? Environments.LOCAL);
+    this.setEnvironment(process.env.NODE_ENV ?? Environments.LOCAL);
   }
 
   get env() {
@@ -55,19 +55,14 @@ class Environment implements IEnvironment {
 
   private resolveEnvPath(key: CommonEnvKeys): string {
     const rootDir: string = path.resolve(__dirname, '../../');
-    let envPath = path.resolve(rootDir, EnvironmentFile[key]);
-    if (!fs.existsSync(envPath)) {
-      // Would throw error if .env.<NODE_ENV> file is not found
-      // if you set CUSTOM_ENV to true
-      const isCustomEnv = !!process.env.CUSTOM_ENV;
-      if (isCustomEnv) {
-        throw new Error(
-          `${EnvironmentFile[key]} file is missing in root directory`
-        );
-      }
-      envPath = path.resolve(rootDir, EnvironmentFile.DEFAULT);
+    const envPath = path.resolve(rootDir, EnvironmentFile[key]);
+    const defaultEnvPath = path.resolve(rootDir, EnvironmentFile.DEFAULT);
+    if (!fs.existsSync(envPath) && !fs.existsSync(defaultEnvPath)) {
+      throw new Error(
+        `${EnvironmentFile.DEFAULT} and ${EnvironmentFile[key]} is missing in root directory. Please add`
+      );
     }
-    return envPath;
+    return fs.existsSync(envPath) ? envPath : defaultEnvPath;
   }
 
   private validateEnvValues() {
@@ -83,10 +78,6 @@ class Environment implements IEnvironment {
       (key) => Environments[key] === this.env
     ) as keyof typeof Environments;
     const envPath = this.resolveEnvPath(envKey);
-
-    if (!fs.existsSync(envPath)) {
-      throw new Error('.env file is missing in root directory');
-    }
 
     configDotenv({ path: envPath });
     this.validateEnvValues();
