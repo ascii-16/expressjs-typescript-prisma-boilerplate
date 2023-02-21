@@ -11,25 +11,25 @@
     "sourceMap": true,
     "experimentalDecorators": true,
     "baseUrl": ".",
-    "rootDir": "src",
+    "rootDir": "./",
     "strictNullChecks": true,
     "paths": {
-      "*": [
-        "src/types/*"
-      ],
       "@/*": [
         "src/*"
       ]
     },
     "types": [
-      "node"
+      "node",
+      "jest"
     ]
   },
   "include": [
-    "src/**/*.ts"
+    "src/**/*.ts",
+    "tests/**/*.ts"
   ],
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "tests"
   ],
   "ts-node": {
     "swc": true

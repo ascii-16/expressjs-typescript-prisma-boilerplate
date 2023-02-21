@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "types": ["@types/node"],
+    "allowJs": true
+  },
+  "extends": "./tsconfig.json",
+  "include": [
+    "tests/**/*.ts",
+  ]
+}
