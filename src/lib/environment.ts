@@ -8,6 +8,7 @@ import {
   Environments,
 } from '@/utils/enums/environment.enum';
 import envValidationConfig from '@/config/env-validation.config';
+import { envFileNotFoundError } from '@/utils/helper';
 
 export interface IEnvironment {
   getCurrentEnvironment: () => string;
@@ -59,12 +60,7 @@ class Environment implements IEnvironment {
     const envPath = path.resolve(rootDir, EnvironmentFile[key]);
     const defaultEnvPath = path.resolve(rootDir, EnvironmentFile.DEFAULT);
     if (!fs.existsSync(envPath) && !fs.existsSync(defaultEnvPath)) {
-      throw new Error(
-        ` \n======================================================================================
-          \n${EnvironmentFile.DEFAULT} and ${EnvironmentFile[key]} is missing in root directory. One of them is required
-          \n======================================================================================
-        `
-      );
+      throw new Error(envFileNotFoundError(key));
     }
     return fs.existsSync(envPath) ? envPath : defaultEnvPath;
   }

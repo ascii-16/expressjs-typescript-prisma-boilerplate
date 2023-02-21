@@ -1,6 +1,8 @@
+import chalk from 'chalk';
 import appConfig from '@/config/app.config';
 import environment from '@/lib/environment';
 import { logWithoutConsole } from '@/lib/logger';
+import { HR } from './helper';
 
 export const printAppInfo = (
   port: number,
@@ -11,16 +13,24 @@ export const printAppInfo = (
   const {
     docs: { swaggerUIPath, apiDocsPath },
   } = appConfig;
-  console.log('------------------------------------------------');
-  console.log('🚀 Server successfully started');
-  console.log('------------------------------------------------');
-  console.log(`✅ Port: ${port}\n`);
-  console.log(`✅ ENV: ${env}\n`);
-  console.log(`✅ App URL: ${appUrl}\n`);
-  console.log(`✅ API URL: ${apiUrl}\n`);
-  console.log(`✅ Swagger: ${appUrl}${swaggerUIPath}\n`);
-  console.log(`✅ API Specs: ${appUrl}${apiDocsPath}`);
-  console.log('------------------------------------------------\n');
+  const linksChalk = chalk.blueBright;
+  const labelChalk = chalk.white;
+  const serverSuccessMessage = chalk.green.bold(
+    '🚀 Server successfully started'
+  );
+  const divider = HR('white', '-', 55);
+  console.log(`
+    \r${divider}\n
+    \r${serverSuccessMessage}\n
+    \r${divider}\n
+    \r✅ ${labelChalk('Port')}: ${chalk.green(port)}\n
+    \r✅ ${labelChalk('ENV')}: ${chalk.green(env)}\n
+    \r✅ ${labelChalk('App URL')}: ${linksChalk(appUrl)}\n
+    \r✅ ${labelChalk('Api URL')}: ${linksChalk(apiUrl)}\n
+    \r✅ ${labelChalk('Swagger')}: ${linksChalk(`${appUrl}${swaggerUIPath}`)}\n
+    \r✅ ${labelChalk('API Specs')}: ${linksChalk(`${appUrl}${apiDocsPath}`)}\n
+    \r${divider}
+  `);
   if (!environment.isDev()) {
     logWithoutConsole({
       level: 'info',
