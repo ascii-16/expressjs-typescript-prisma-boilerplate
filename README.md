@@ -6,6 +6,7 @@
 - ts-node-dev
 - swagger
 - commitizen
+- unit/e2e testing with jest and supertest
 
 
 ## Tech Stack
@@ -75,10 +76,22 @@ Genarate prisma types
   npm run prisma:genarate
 ```
 
+Migrate prisma db
+
+```bash
+  npm run prisma:migrate
+```
+
 Commitizen
 
 ```bash
   npm run commit
+```
+
+Run tests
+
+```bash
+  npm run test
 ```
 
 ## License
