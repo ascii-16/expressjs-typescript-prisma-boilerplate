@@ -53,6 +53,8 @@ class Environment implements IEnvironment {
   }
 
   private resolveEnvPath(key: CommonEnvKeys): string {
+    // On priority bar, .env.[NODE_ENV] has higher priority than default env file (.env)
+    // If both are not resolved, error is thrown.
     const rootDir: string = path.resolve(__dirname, '../../');
     const envPath = path.resolve(rootDir, EnvironmentFile[key]);
     const defaultEnvPath = path.resolve(rootDir, EnvironmentFile.DEFAULT);
