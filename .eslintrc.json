@@ -4,6 +4,7 @@
         "es2021": true
     },
     "plugins": [
+        "unicorn",
         "prettier"
     ],
     "extends": [
@@ -19,6 +20,12 @@
     "rules": {
         "prettier/prettier": [
             "error"
+        ],
+        "unicorn/filename-case": [
+            "error",
+            {
+                "case": "kebabCase"
+            }
         ],
         "@typescript-eslint/explicit-function-return-type": "off",
         "@typescript-eslint/no-extraneous-class": "off",

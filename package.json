@@ -80,6 +80,7 @@
     "eslint-plugin-n": "^15.6.1",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-promise": "^6.1.1",
+    "eslint-plugin-unicorn": "^45.0.2",
     "express-jsdoc-swagger": "^1.8.0",
     "husky": "^8.0.3",
     "is-ci": "^3.0.1",
