@@ -24,7 +24,18 @@
     }
   },
   "author": "akhil chandran",
-  "license": "ISC",
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "repository": "git@github.com:akhil-neoito/expressjs-typescript-prisma-boilerplate.git",
+  "keywords": [
+    "NodeJS",
+    "TypeScript",
+    "express",
+    "prisma",
+    "boilerplate"
+  ],
+  "license": "MIT",
   "dependencies": {
     "@prisma/client": "^4.9.0",
     "axios": "^1.2.2",
