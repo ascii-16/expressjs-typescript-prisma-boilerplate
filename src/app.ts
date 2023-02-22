@@ -38,12 +38,11 @@ class App {
   }
 
   private setRoutes(): void {
-    this.express.use('/', home);
-
     const {
       api: { version },
     } = appConfig;
     const { env } = environment;
+    this.express.use('/', home);
     this.express.use(`/api/${version}/${env}`, routes);
   }
 
