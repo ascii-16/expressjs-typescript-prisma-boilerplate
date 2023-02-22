@@ -22,7 +22,7 @@
             "error"
         ],
         "unicorn/filename-case": [
-            "error",
+            "warn",
             {
                 "case": "kebabCase"
             }
