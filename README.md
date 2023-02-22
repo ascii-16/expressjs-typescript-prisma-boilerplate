@@ -11,8 +11,7 @@
 
 ## Tech Stack
 
-Node, Express, Typescript
-
+[![Tech Stack](https://github-readme-tech-stack.vercel.app/api/cards?title=Tech%20Stack&lineCount=2&theme=discord&line1=node.js,node.js,c72c03;&line2=typescript,typescript,8d8f3a;)](https://github-readme-tech-stack.vercel.app/api/cards?title=Tech%20Stack&lineCount=2&theme=discord&line1=node.js,node.js,c72c03;&line2=typescript,typescript,8d8f3a;)
 
 ## Run Locally
 
