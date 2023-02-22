@@ -13,8 +13,8 @@ export const printAppInfo = (
   const {
     docs: { swaggerUIPath, apiDocsPath },
   } = appConfig;
-  const divider = HR('blue', '-', 55);
-  const urlChalk = chalk.underline.hex('#0159DA');
+  const divider = HR('blue', '~', 55);
+  const urlChalk = chalk.underline.blue;
   const labelChalk = chalk.white.bold;
   const primaryChalk = chalk.green;
   const serverSuccessMessage = primaryChalk.bold(
