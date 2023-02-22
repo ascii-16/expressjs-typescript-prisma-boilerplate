@@ -1,7 +1,6 @@
 # Express + Typescript + Prisma boilerplate
 
-![Tech Stack](https://github-readme-tech-stack.vercel.app/api/cards?lineCount=2&theme=github_dark&line1=node.js,node.js,ddbfef;express,express,b27c40;typescript,typescript,543e05;&line2=eslint,eslint,2751ce;prisma,prisma,1043b5;husky,husky,578bfb;jest,jest,f59716;commitlint,commitlint,820d41;)
-
+[![My Tech Stack](https://github-readme-tech-stack.vercel.app/api/cards?align=center&titleAlign=center&lineCount=4&theme=github_dark&hideTitle=true&line1=node.js,node.js,ddbfef;typescript,typescript,543e05;&line3=eslint,eslint,3663f5;prettier,prettier,2ef01c;husky,husky,9d8ed0;commitlint,commitlint,b2f3e7;&line2=typescript,typescript,bd3ea6;prisma,prisma,09acb9;&line4=jest,jest,de5bd6;supertest,supertest,cb1288;)](https://github-readme-tech-stack.vercel.app/api/cards?align=center&titleAlign=center&lineCount=4&theme=github_dark&hideTitle=true&line1=node.js,node.js,ddbfef;typescript,typescript,543e05;&line3=eslint,eslint,3663f5;prettier,prettier,2ef01c;husky,husky,9d8ed0;commitlint,commitlint,b2f3e7;&line2=typescript,typescript,bd3ea6;prisma,prisma,09acb9;&line4=jest,jest,de5bd6;supertest,supertest,cb1288;)
 
 ## Features
 
