@@ -1,6 +1,5 @@
-import { PrismaClient, users } from '@prisma/client';
-
-const prisma = new PrismaClient();
+import { type users } from '@prisma/client';
+import prisma from '@/lib/prisma';
 
 export default class UserService {
   public async createUser(data: users) {
