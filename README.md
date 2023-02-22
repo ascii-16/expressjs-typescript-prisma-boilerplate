@@ -1,6 +1,6 @@
 # Express + Typescript + Prisma boilerplate
 
-[![Tech Stack](https://github-readme-tech-stack.vercel.app/api/cards?title=Tech%20Stack&lineCount=2&theme=discord&line1=node.js,node.js,c72c03;&line2=typescript,typescript,8d8f3a;)](https://github-readme-tech-stack.vercel.app/api/cards?title=Tech%20Stack&lineCount=2&theme=discord&line1=node.js,node.js,c72c03;&line2=typescript,typescript,8d8f3a;)
+(https://github-readme-tech-stack.vercel.app/api/cards?lineCount=1&theme=github_dark&line1=node.js,node.js,ddbfef;express,express,b27c40;typescript,typescript,543e05;&line2=eslint,eslint,2751ce;prisma,prisma,1043b5;husky,husky,578bfb;jest,jest,f59716;commitlint,commitlint,820d41;)
 
 ## Features
 
