@@ -18,18 +18,19 @@ const envScriptChalk = (fileName: string) => {
 };
 
 export const envFileNotFoundError = (key: CommonEnvKeys): string => {
-  const divider = HR('red', '-', 40);
+  const divider = HR('red', '~', 40);
   const envFile = EnvironmentFile[key];
   const defaultEnvFile = EnvironmentFile.DEFAULT;
   const envNotFoundMessage = chalk.red.bold('Environment file not found!!');
-  const fileNotFoundMessage = `${chalk.yellowBright(
+  const fileNotFoundMessage = `${chalk.greenBright(
     defaultEnvFile
-  )} or ${chalk.yellowBright(envFile)} is required`;
+  )} or ${chalk.greenBright(envFile)} is required`;
   return `
     \r${divider}\n
     \r${envNotFoundMessage}\n
+    \r${divider}\n
     \r${fileNotFoundMessage}\n
-    \rTry the following:\n
+    \r${chalk.bold('Try one of the following')}:\n
     \r${envScriptChalk(envFile)}\n
     \r${envScriptChalk(defaultEnvFile)}\n
     \r${divider}
