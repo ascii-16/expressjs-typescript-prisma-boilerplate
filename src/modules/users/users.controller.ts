@@ -1,6 +1,6 @@
 import { type NextFunction, type Request } from 'express';
 import { type users } from '@prisma/client';
-import { CustomResponse } from '@/types/common';
+import { type CustomResponse } from '@/types/common.type';
 import UserService from './users.service';
 import Api from '@/lib/api';
 import { HttpStatusCode } from 'axios';
