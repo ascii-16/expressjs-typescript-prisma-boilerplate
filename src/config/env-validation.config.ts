@@ -1,4 +1,4 @@
-import { Environments } from '@/utils/enums/environment.enum';
+import { Environments } from '@/enums/environment.enum';
 import { str, num } from 'envalid';
 
 const envValidationConfig = {

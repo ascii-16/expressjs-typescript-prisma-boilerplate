@@ -1,4 +1,4 @@
-import { type Environments } from '@/utils/enums/environment.enum';
+import { type Environments } from '@/enums/environment.enum';
 
 declare global {
   namespace NodeJS {

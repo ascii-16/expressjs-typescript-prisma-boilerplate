@@ -2,13 +2,10 @@ import fs from 'fs';
 import path from 'path';
 import { config as configDotenv } from 'dotenv';
 import { cleanEnv } from 'envalid';
-import {
-  type CommonEnvKeys,
-  EnvironmentFile,
-  Environments,
-} from '@/utils/enums/environment.enum';
+import { EnvironmentFile, Environments } from '@/enums/environment.enum';
 import envValidationConfig from '@/config/env-validation.config';
 import { envFileNotFoundError } from '@/utils/helper';
+import { type CommonEnvKeys } from '@/types/environment.type';
 
 export interface IEnvironment {
   getCurrentEnvironment: () => string;
