@@ -7,8 +7,6 @@ declare global {
       PORT: string;
       APP_BASE_URL: string;
       DATABASE_URL: string;
-      AWS_REGION: string;
-      COGNITO_POOL_ID: string;
     }
   }
 }
