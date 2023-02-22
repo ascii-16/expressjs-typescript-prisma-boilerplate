@@ -13,24 +13,27 @@ export const printAppInfo = (
   const {
     docs: { swaggerUIPath, apiDocsPath },
   } = appConfig;
+  const divider = HR('white', '-', 55);
   const urlChalk = chalk.blueBright;
   const labelChalk = chalk.white;
+  const primaryChalk = chalk.green;
   const serverSuccessMessage = chalk.green.bold(
     '🚀 Server successfully started'
   );
-  const divider = HR('white', '-', 55);
+
   console.log(`
     \r${divider}\n
     \r${serverSuccessMessage}\n
     \r${divider}\n
-    \r✅ ${labelChalk('Port')}: ${chalk.green(port)}\n
-    \r✅ ${labelChalk('ENV')}: ${chalk.green(env)}\n
+    \r✅ ${labelChalk('Port')}: ${primaryChalk(port)}\n
+    \r✅ ${labelChalk('ENV')}: ${primaryChalk(env)}\n
     \r✅ ${labelChalk('App URL')}: ${urlChalk(appUrl)}\n
     \r✅ ${labelChalk('Api URL')}: ${urlChalk(apiUrl)}\n
     \r✅ ${labelChalk('Swagger')}: ${urlChalk(`${appUrl}${swaggerUIPath}`)}\n
     \r✅ ${labelChalk('API Specs')}: ${urlChalk(`${appUrl}${apiDocsPath}`)}\n
     \r${divider}
   `);
+
   if (!environment.isDev()) {
     logWithoutConsole({
       level: 'info',
