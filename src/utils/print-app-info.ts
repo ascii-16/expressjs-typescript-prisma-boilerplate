@@ -13,14 +13,13 @@ export const printAppInfo = (
   const {
     docs: { swaggerUIPath, apiDocsPath },
   } = appConfig;
-  const divider = HR('white', '-', 55);
-  const urlChalk = chalk.blueBright;
-  const labelChalk = chalk.white;
+  const divider = HR('blue', '-', 55);
+  const urlChalk = chalk.underline.hex('#0159DA');
+  const labelChalk = chalk.white.bold;
   const primaryChalk = chalk.green;
-  const serverSuccessMessage = chalk.green.bold(
+  const serverSuccessMessage = primaryChalk.bold(
     '🚀 Server successfully started'
   );
-
   console.log(`
     \r${divider}\n
     \r${serverSuccessMessage}\n
@@ -33,7 +32,6 @@ export const printAppInfo = (
     \r✅ ${labelChalk('API Specs')}: ${urlChalk(`${appUrl}${apiDocsPath}`)}\n
     \r${divider}
   `);
-
   if (!environment.isDev()) {
     logWithoutConsole({
       level: 'info',
