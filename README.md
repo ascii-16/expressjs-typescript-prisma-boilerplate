@@ -81,6 +81,12 @@ Migrate prisma db
   npm run prisma:migrate
 ```
 
+Open prisma studio
+
+```bash
+  npm run prisma:studio
+```
+
 Commitizen
 
 ```bash

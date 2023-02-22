@@ -15,6 +15,7 @@
     "format": "prettier --ignore-path .prettierignore --write \"**/*.+(ts|js)\"",
     "prisma:generate": "npx prisma generate",
     "prisma:migrate": "npx prisma migrate dev --name init",
+    "prisma:studio": "npx prisma studio",
     "commit": "git-cz",
     "test": "jest --notify --verbose"
   },
