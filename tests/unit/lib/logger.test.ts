@@ -3,7 +3,7 @@ import logger from '../../../src/lib/logger';
 
 jest.mock('../../../src/lib/logger');
 
-describe('logger', () => {
+describe('[unit]:logger', () => {
   it('should log info log', () => {
     const logSpy = jest.spyOn(logger, 'log');
     const mockLogMessage = 'Test info log message';
