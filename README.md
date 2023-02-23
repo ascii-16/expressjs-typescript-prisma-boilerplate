@@ -22,6 +22,18 @@ This repo is created as a [template repo](https://docs.github.com/en/repositorie
 | Jest | A JavaScript testing framework with a focus on simplicity and ease of use |
 | Supertest | A library for testing Node.js HTTP servers using a fluent API |
 
+## Features
+
+:white_check_mark: Prisma integrated
+:white_check_mark: Swagger for api documentation
+:white_check_mark: Linting and formatting with eslint and prettier
+:white_check_mark: e2e/unit testing with jest and supertest
+:white_check_mark: Commit hooks with husky
+:white_check_mark: Multiple environment support
+:white_check_mark: Advanced logging with winston
+:white_check_mark: env validation
+:white_check_mark: Preconfigured error handlers
+
 ## Clone
 
 Clone the project
