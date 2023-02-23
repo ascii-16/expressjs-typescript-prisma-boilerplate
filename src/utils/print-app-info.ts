@@ -4,6 +4,14 @@ import environment from '@/lib/environment';
 import { logWithoutConsole } from '@/lib/logger';
 import { HR } from './helper';
 
+const primaryChalk = chalk.green;
+
+const label = (text: string): string => {
+  const labelChalk = chalk.white.bold;
+  const icon = primaryChalk('✔');
+  return `${icon} ${labelChalk(text)}`;
+};
+
 export const printAppInfo = (
   port: number,
   env: string,
@@ -15,8 +23,6 @@ export const printAppInfo = (
   } = appConfig;
   const divider = HR('blue', '~', 55);
   const urlChalk = chalk.underline.blue;
-  const labelChalk = chalk.white.bold;
-  const primaryChalk = chalk.green;
   const serverSuccessMessage = primaryChalk.bold(
     '🚀 Server successfully started'
   );
@@ -24,12 +30,12 @@ export const printAppInfo = (
     \r${divider}\n
     \r${serverSuccessMessage}\n
     \r${divider}\n
-    \r✅ ${labelChalk('Port')}: ${primaryChalk(port)}\n
-    \r✅ ${labelChalk('ENV')}: ${primaryChalk(env)}\n
-    \r✅ ${labelChalk('App URL')}: ${urlChalk(appUrl)}\n
-    \r✅ ${labelChalk('Api URL')}: ${urlChalk(apiUrl)}\n
-    \r✅ ${labelChalk('Swagger')}: ${urlChalk(`${appUrl}${swaggerUIPath}`)}\n
-    \r✅ ${labelChalk('API Specs')}: ${urlChalk(`${appUrl}${apiDocsPath}`)}\n
+    \r${label('Port')}: ${primaryChalk(port)}\n
+    \r${label('ENV')}: ${primaryChalk(env)}\n
+    \r${label('App URL')}: ${urlChalk(appUrl)}\n
+    \r${label('Api URL')}: ${urlChalk(apiUrl)}\n
+    \r${label('Swagger')}: ${urlChalk(`${appUrl}${swaggerUIPath}`)}\n
+    \r${label('API Specs')}: ${urlChalk(`${appUrl}${apiDocsPath}`)}\n
     \r${divider}
   `);
   if (!environment.isDev()) {

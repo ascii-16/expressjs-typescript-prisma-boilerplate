@@ -4,7 +4,7 @@ import logger from '../src/lib/logger';
 import { HR } from '../src/utils/helper';
 
 const prisma = new PrismaClient();
-const seedUsers = async () => {
+const seedUsers = async (): Promise<void> => {
   const fakeUsers = faker.helpers.uniqueArray<users>(
     () => ({
       id: faker.datatype.uuid(),
@@ -22,19 +22,19 @@ const seedUsers = async () => {
   `);
 };
 
-async function seed() {
+async function seed(): Promise<void> {
   await Promise.all([seedUsers()]);
 }
 
-const main = async () => {
+async function main(): Promise<void> {
   try {
     await seed();
     await prisma.$disconnect();
   } catch (e) {
-    console.error(e);
+    logger.error(e);
     await prisma.$disconnect();
     process.exit(1);
   }
-};
+}
 
 main().catch((e) => logger.error(e));
