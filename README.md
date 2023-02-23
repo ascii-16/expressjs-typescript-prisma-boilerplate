@@ -24,15 +24,23 @@ This repo is created as a [template repo](https://docs.github.com/en/repositorie
 
 ## Features
 
-:white_check_mark: Prisma integrated
-:white_check_mark: Swagger for api documentation
-:white_check_mark: Linting and formatting with eslint and prettier
-:white_check_mark: e2e/unit testing with jest and supertest
-:white_check_mark: Commit hooks with husky
-:white_check_mark: Multiple environment support
-:white_check_mark: Advanced logging with winston
-:white_check_mark: env validation
-:white_check_mark: Preconfigured error handlers
+:rocket: Prisma integrated
+
+:rocket: Swagger for api documentation
+
+:rocket: Linting and formatting with eslint and prettier
+
+:rocket: e2e/unit testing with jest and supertest
+
+:rocket: Commit hooks with husky
+
+:rocket: Multiple environment support
+
+:rocket: Advanced logging with winston
+
+:rocket: env validation
+
+:rocket: Preconfigured error handlers
 
 ## Clone
 
