@@ -92,17 +92,16 @@ The source directory contains the following folders
 └── utils
 ```
 
-| Folder      | Description                                                                                                                                                                                                                                                                                                                                                                 |
-|-------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| config      | Contains configuration files for the whole app and different libraries.                                                                                                                                                                                                                                                                                                          |
-| dto         | Contains Data Transfer Objects (DTOs) which are used to transfer data between different layers of the app.                                                                                                                                                                                                                                                                |
-| enums      | Enum definitions.                                                                                                                                              |
-
-| lib         | Contains any external libraries or modules that the app may depend on, as well as any custom utility functions or classes that you have written yourself. This can include things like a custom logger, validation functions, or other commonly used functionality that doesn't fit neatly into any of the other folders. |
-| middlewares | Contains middleware functions which can be used to modify requests and responses as they pass through the app.                                                                                                                                                                                                                                                          |
-| modules     | Contains the main modules of the app, each of which can contain submodules, controllers, services, and other components.                                                                                                                                                                                                                                                |
-| types       | Contains type definitions which can be used throughout the app to ensure type safety and consistency.                                                                                                                                                                                                                                                                   |
-| utils       | Contains utility functions or classes that can be used throughout the app for common tasks, such as string manipulation, date formatting, or math calculations. These functions may not fit neatly into any of the other folders, but are still useful components of the app.  |
+Folder | Description
+------ | -----------
+config | Contains configuration files for the whole app and different libraries.
+dto | Contains Data Transfer Objects (DTOs) which are used to transfer data between different layers of the app.
+enums | Contains TypeScript enum definitions which can be used throughout the app to ensure type safety and consistency.
+lib | Contains any external libraries or modules that the app may depend on, as well as any custom utility functions or classes that you have written yourself. This can include things like a custom logger, validation functions, or other commonly used functionality that doesn't fit neatly into any of the other folders.
+middlewares | Contains middleware functions which can be used to modify requests and responses as they pass through the app.
+modules | Contains the main modules of the app, each of which can contain submodules, controllers, services, and other components.
+types | Contains type definitions which can be used throughout the app to ensure type safety and consistency.
+utils | Contains utility functions or classes that can be used throughout the app for common tasks, such as string manipulation, date formatting, or math calculations. These functions may not fit neatly into any of the other folders, but are still useful components of the app.
 
 ## License
 
