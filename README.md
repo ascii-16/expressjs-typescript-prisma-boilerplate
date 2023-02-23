@@ -4,23 +4,20 @@
 
 [![My Tech Stack](https://github-readme-tech-stack.vercel.app/api/cards?fontWeight=normal&align=left&titleAlign=center&lineCount=4&theme=github_dark&hideTitle=true&line1=node.js,node.js,ddbfef;typescript,typescript,543e05;&line3=eslint,eslint,3663f5;prettier,prettier,2ef01c;husky,husky,9d8ed0;commitlint,commitlint,b2f3e7;&line2=express,express,bd3ea6;prisma,prisma,09acb9;&line4=jest,jest,de5bd6;supertest,supertest,cb1288;swagger,swagger,172770;)](https://github-readme-tech-stack.vercel.app/api/cards?align=center&titleAlign=center&lineCount=4&theme=github_dark&hideTitle=true&line1=node.js,node.js,ddbfef;typescript,typescript,543e05;&line3=eslint,eslint,3663f5;prettier,prettier,2ef01c;husky,husky,9d8ed0;commitlint,commitlint,b2f3e7;&line2=express,express,bd3ea6;prisma,prisma,09acb9;&line4=jest,jest,de5bd6;supertest,supertest,cb1288;swagger,swagger,172770;)
 
-<details>
-  <summary>Stack Info</summary>
-  | Feature | Description |
-  | --- | --- |
-  | Node.js | A JavaScript runtime built on Chrome's V8 JavaScript engine that allows for server-side JavaScript execution |
-  | Express | A popular web framework for Node.js that provides a variety of features for building web applications |
-  | TypeScript | A superset of JavaScript that adds optional static typing, classes, and other features to the language |
-  | Prisma | A database toolkit and ORM that allows for type-safe database access and schema management |
-  | ESLint | A tool for identifying and reporting on patterns found in ECMAScript/JavaScript code |
-  | Prettier | A tool for automatically formatting code to enforce consistent style |
-  | Husky | A tool for running scripts in response to Git events, such as commits or pushes |
-  | ts-node-dev | A development tool for running TypeScript code with automatic restarts and fast compilation times |
-  | Swagger | A tool for designing, building, and documenting RESTful APIs |
-  | Commitizen | A tool for making it easier to follow the conventional commit format for Git commits |
-  | Jest | A JavaScript testing framework with a focus on simplicity and ease of use |
-  | Supertest | A library for testing Node.js HTTP servers using a fluent API |
-</details>
+| Feature | Description |
+| --- | --- |
+| Node.js | A JavaScript runtime built on Chrome's V8 JavaScript engine that allows for server-side JavaScript execution |
+| Express | A popular web framework for Node.js that provides a variety of features for building web applications |
+| TypeScript | A superset of JavaScript that adds optional static typing, classes, and other features to the language |
+| Prisma | A database toolkit and ORM that allows for type-safe database access and schema management |
+| ESLint | A tool for identifying and reporting on patterns found in ECMAScript/JavaScript code |
+| Prettier | A tool for automatically formatting code to enforce consistent style |
+| Husky | A tool for running scripts in response to Git events, such as commits or pushes |
+| ts-node-dev | A development tool for running TypeScript code with automatic restarts and fast compilation times |
+| Swagger | A tool for designing, building, and documenting RESTful APIs |
+| Commitizen | A tool for making it easier to follow the conventional commit format for Git commits |
+| Jest | A JavaScript testing framework with a focus on simplicity and ease of use |
+| Supertest | A library for testing Node.js HTTP servers using a fluent API |
 
 
 ## Run Locally
