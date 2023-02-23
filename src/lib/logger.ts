@@ -1,5 +1,4 @@
 import appConfig from '@/config/app.config';
-import { LOG_DIR } from '@/utils/constants';
 import { existsSync, mkdirSync } from 'fs';
 import {
   createLogger,
@@ -22,10 +21,10 @@ if (!existsSync(logDir)) {
 const logTransports: transport[] = [new transports.Console()];
 const fileTransports: transport[] = [
   new transports.File({
-    filename: `${LOG_DIR}/${errorLogFile}`,
+    filename: `${logDir}/${errorLogFile}`,
     level: 'error',
   }),
-  new transports.File({ filename: `${LOG_DIR}/${logFile}` }),
+  new transports.File({ filename: `${logDir}/${logFile}` }),
 ];
 
 if (!environment.isDev()) {

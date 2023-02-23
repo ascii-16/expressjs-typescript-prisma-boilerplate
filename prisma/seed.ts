@@ -1,8 +1,9 @@
 import { PrismaClient, type users } from '@prisma/client';
 import { faker } from '@faker-js/faker';
+import logger from '../src/lib/logger';
+import { HR } from '../src/utils/helper';
 
 const prisma = new PrismaClient();
-
 const seedUsers = async () => {
   const fakeUsers = faker.helpers.uniqueArray<users>(
     () => ({
@@ -14,7 +15,11 @@ const seedUsers = async () => {
     3
   );
   const users = await prisma.users.createMany({ data: fakeUsers });
-  console.log(`Seed completed for user(${users.count})`);
+  logger.info(`
+    \rSeed completed for model: user
+    \rcount: ${users.count}
+    \r${HR('white', '-', 30)}
+  `);
 };
 
 async function seed() {
@@ -32,4 +37,4 @@ const main = async () => {
   }
 };
 
-main();
+main().catch((e) => logger.error(e));
