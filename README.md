@@ -23,10 +23,11 @@ This repo is created as a [template repo](https://docs.github.com/en/repositorie
 | Supertest | A library for testing Node.js HTTP servers using a fluent API |
 
 ## Required Stack
-|            |           |
-|------------|-----------|
-| NodeJS     | >=16      |
-| Typescript | >=4\.9\.4 |
+
+| Tool       | Required version |
+|------------|------------------|
+| NodeJS     | >=16             |
+| Typescript | >=4\.9\.4        |
 
 ## Features
 
