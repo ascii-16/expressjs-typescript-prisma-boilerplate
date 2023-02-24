@@ -22,13 +22,6 @@ This repo is created as a [template repo](https://docs.github.com/en/repositorie
 | Jest | A JavaScript testing framework with a focus on simplicity and ease of use |
 | Supertest | A library for testing Node.js HTTP servers using a fluent API |
 
-## Required Stack
-
-| Tool       | Required version |
-|------------|------------------|
-| NodeJS     | >=16             |
-| Typescript | >=4\.9\.4        |
-
 ## Features
 
 :white_check_mark: Prisma integrated
@@ -49,7 +42,14 @@ This repo is created as a [template repo](https://docs.github.com/en/repositorie
 
 :white_check_mark: Preconfigured error handlers
 
-## Clone
+## Required Stack
+
+| Tool       | Required version |
+|------------|------------------|
+| NodeJS     | >=16             |
+| Typescript | >=4\.9\.4        |
+
+## Run Locally
 
 Clone the project
 
@@ -61,6 +61,25 @@ Go to the project directory
 
 ```bash
   cd expressjs-typescript-prisma-boilerplate
+```
+
+Install dependencies
+
+```bash
+  npm i
+```
+
+Create env file from .env.example
+
+```bash
+  cp .env.example .env
+  # Add env values to .env file after this
+```
+
+Start app in dev mode
+
+```bash
+  npm run dev
 ```
 
 ## Scripts
