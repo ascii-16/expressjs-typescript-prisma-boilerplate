@@ -42,6 +42,8 @@ This repo is created as a [template repo](https://docs.github.com/en/repositorie
 
 :white_check_mark: Preconfigured error handlers
 
+:white_check_mark: Ensures consitent file naming convention
+
 ## Required Stack
 
 | Tool       | Required version |
