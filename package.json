@@ -4,11 +4,12 @@
   "description": "expressjs typescript boilerplate with prisma",
   "main": "index.ts",
   "scripts": {
+    "preinstall": "npx only-allow pnpm",
     "prepare": "is-ci || husky install",
     "build": "npx prisma generate && tsc --build --pretty --verbose --diagnostics --listEmittedFiles && tsc-alias -p tsconfig.json",
     "start": "FORCE_COLOR=2 node ./dist/index.js",
     "dev": "npx prisma generate && NODE_ENV=development ts-node-dev -r tsconfig-paths/register --respawn --transpile-only --exit-child --watch src src/index.ts",
-    "prod": "npm run build && npm run start",
+    "prod": "pnpm build && pnpm start",
     "clean": "rm -rf node_modules coverage dist .nyc_output",
     "lint": "eslint --ignore-path .eslintignore --ext .ts,.js",
     "lint:fix": "eslint --ignore-path .eslintignore --fix --ext .ts,.js",
@@ -43,6 +44,7 @@
   "license": "MIT",
   "dependencies": {
     "@prisma/client": "^4.9.0",
+    "@typescript-eslint/parser": "^5.53.0",
     "axios": "^1.2.2",
     "body-parser": "^1.18.3",
     "class-transformer": "^0.5.1",
