@@ -69,6 +69,10 @@ Go to the project directory
 
 [Install pnpm](https://pnpm.io/installation) if not installed
 
+```bash
+  npm install -g pnpm
+```
+
 Install dependencies
 
 ```bash
