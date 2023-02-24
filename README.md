@@ -69,7 +69,11 @@ Go to the project directory
 
 ## Run Locally
 
-Run ```bash make setup``` to setup the project or run each steps individually as below
+Run
+```bash 
+  make setup
+```
+to setup the project or run each steps individually as below
 
 [Install pnpm](https://pnpm.io/installation) if not installed
 
