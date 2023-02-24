@@ -22,6 +22,12 @@ This repo is created as a [template repo](https://docs.github.com/en/repositorie
 | Jest | A JavaScript testing framework with a focus on simplicity and ease of use |
 | Supertest | A library for testing Node.js HTTP servers using a fluent API |
 
+## Required Stack
+|            |           |
+|------------|-----------|
+| NodeJS     | >=16      |
+| Typescript | >=4\.9\.4 |
+
 ## Features
 
 :white_check_mark: Prisma integrated
