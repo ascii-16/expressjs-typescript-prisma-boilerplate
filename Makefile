@@ -1,8 +1,14 @@
 #!make
 setup:
-	echo 'Installing latest version of pnpm...'
 	npm i -g pnpm
-	echo 'Installing dependencies'
+	@echo "\n✅ Installed latest version of pnpm...\n"
 	pnpm i
-	echo 'Creating env file'
+	@echo "\n✅ Installed dependencies\n"
 	cp .env.example .env
+	@echo "\n✅ Created env file\n"
+	@echo "Replace the variables in env file with your credentials\n\nThen run:: make prisma\n"
+prisma:
+	pnpm run prisma:generate
+	@echo "✅ Generated prisma types\n"
+	pnpm run prisma:migrate
+	@echo "✅ Migrated db"
