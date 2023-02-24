@@ -53,7 +53,7 @@ This repo is created as a [template repo](https://docs.github.com/en/repositorie
 | NodeJS     | >=16             |
 | Typescript | >=4\.9\.4        |
 
-## Run Locally
+## Clone
 
 Clone the project
 
@@ -66,6 +66,10 @@ Go to the project directory
 ```bash
   cd expressjs-typescript-prisma-boilerplate
 ```
+
+## Run Locally
+
+Run ```bash make setup``` to setup the project or run each steps individually as below
 
 [Install pnpm](https://pnpm.io/installation) if not installed
 
