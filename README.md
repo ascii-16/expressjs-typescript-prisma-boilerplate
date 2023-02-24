@@ -44,6 +44,8 @@ This repo is created as a [template repo](https://docs.github.com/en/repositorie
 
 :white_check_mark: pnpm as package manager
 
+:white_check_mark: Ensures consitent file naming convention
+
 ## Required Stack
 
 | Tool       | Required version |
