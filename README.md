@@ -1,6 +1,6 @@
 # Express + Typescript + Prisma boilerplate
 
-This is an opiniated express + typescript boilerplate. Prisma is being used as an ORM to have the flexibility of switching databases with minimal code change.
+This is an opinionated express + typescript boilerplate. Prisma is being used as an ORM to have the flexibility of switching databases with minimal code change.
 This repo is created as a [template repo](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template).
 
 ## Stack
