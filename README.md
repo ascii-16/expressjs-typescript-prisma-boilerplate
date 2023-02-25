@@ -91,7 +91,7 @@ Multiple env files are also supported according to each environment as below
 * `.env`: The default environment file used in all environments, unless a specific custom environment file is present. Contains common configuration variables used across all environments.
 * `.env.dev`, `.env.test`, `.env.stage`, `.env.prod`: Custom environment files specific to each environment. Used to customize the configuration of the application for each environment.
 
-Note: Custom environment files have priority over the default .env file. Configuration variables in a specific custom environment file take precedence over the ones in the default .env file.
+**Note**: Custom environment files have priority over the default .env file. Configuration variables in a specific custom environment file take precedence over the ones in the default .env file.
 
 ## Run Locally
 
