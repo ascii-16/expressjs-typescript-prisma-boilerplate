@@ -62,8 +62,27 @@ Clone the project
 Go to the project directory
 
 ```bash
-  cd expressjs-typescript-prisma-boilerplate
+  cd expressjs-typescript-prisma-boilerplate\
 ```
+
+## Environment setup
+
+Currently, four envirornments are supported namely,
+
+1.Development Environment: Used during the development of the application
+
+2.Test Environment: Used to test the application before it is deployed to production
+
+3.Staging Environment: Used to simulate the production environment as closely as possible. It is used to test the application in a live-like environment before it is deployed to production.
+
+4.Production Environment: This environment is where the application is deployed and accessed by end-users.
+
+Multiple env files are also supported according to each environment as below
+
+* `.env`: The default environment file used in all environments, unless a specific custom environment file is present. Contains common configuration variables used across all environments.
+* `.env.dev`, `.env.test`, `.env.stage`, `.env.prod`: Custom environment files specific to each environment. Used to customize the configuration of the application for each environment.
+
+Note: Custom environment files have priority over the default .env file. Configuration variables in a specific custom environment file take precedence over the ones in the default .env file.
 
 ## Run Locally
 
