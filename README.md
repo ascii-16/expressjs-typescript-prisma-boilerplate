@@ -67,7 +67,16 @@ Go to the project directory
 
 ## Environment setup
 
-Currently, four envirornments are supported namely,
+Multiple enviroments are supported namely `development`, `test`, `staging`, `production` as defined in `envirornment.enum.ts`
+
+```ts
+  Environments {
+    PRODUCTION = 'production',
+    DEV = 'development',
+    TEST = 'test',
+    STAGING = 'staging',
+  }
+```
 
 1.Development Environment: Used during the development of the application
 
