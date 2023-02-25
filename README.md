@@ -159,7 +159,7 @@ Following are the list of predefined scripts available in the app
 | prisma     | Primsa schema, seeds etc.                    |
 | public     | Static resources                             |
 | src        | Source folder                                |
-| tests      | Containes test files                         |
+| tests      | Contains test files                         |
 
 ### src
 
