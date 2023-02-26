@@ -3,6 +3,7 @@ import request from 'supertest';
 import { type ApiResponse } from '../../types/util-types';
 import app from '../../../src/app';
 import prismaClient from '../../../src/lib/prisma';
+import { createUserBody } from '../../data/user';
 
 /**
  * Integration testing is a type of software testing that focuses on testing
@@ -13,16 +14,20 @@ import prismaClient from '../../../src/lib/prisma';
  * @ref https://en.wikipedia.org/wiki/Integration_testing
  */
 
+const { name, email, phone } = createUserBody;
+
 beforeAll(async () => {
   await prismaClient.$connect();
 });
 
-const createUserBody = {
-  name: 'John',
-  phone: '+99999999999999',
-  email: 'john@example.com',
-};
-const { name, email, phone } = createUserBody;
+afterAll(async () => {
+  await prismaClient.users.deleteMany({
+    where: {
+      AND: [{ name, email }],
+    },
+  });
+  await prismaClient.$disconnect();
+});
 
 test('[Integration] POST: /users/create', async () => {
   jest.resetModules();
@@ -38,13 +43,4 @@ test('[Integration] POST: /users/create', async () => {
   expect(data.name).toBe(name);
   expect(data.email).toBe(email);
   expect(data.phone).toBe(phone);
-});
-
-afterAll(async () => {
-  await prismaClient.users.deleteMany({
-    where: {
-      AND: [{ name, email }],
-    },
-  });
-  await prismaClient.$disconnect();
 });

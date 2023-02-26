@@ -3,12 +3,7 @@ import request from 'supertest';
 import { type ApiResponse } from '../../types/util-types';
 import app from '../../../src/app';
 import prismaClient from '../../../src/lib/prisma';
-
-const createUserBody = {
-  name: 'John',
-  phone: '+99999999999999',
-  email: 'john@example.com',
-};
+import { createUserBody } from '../../data/user';
 
 /**
  * End-to-end (E2E) testing is a type of software testing that focuses on
