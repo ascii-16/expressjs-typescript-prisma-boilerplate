@@ -4,6 +4,7 @@
     "listEmittedFiles": true,
     "diagnostics": true,
     "pretty": true,
+    "sourceMap": true,
   },
   "exclude": [
     "node_modules",
