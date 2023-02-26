@@ -8,7 +8,6 @@
     "esModuleInterop": true,
     "moduleResolution": "Node",
     "outDir": "dist",
-    "sourceMap": true,
     "experimentalDecorators": true,
     "baseUrl": ".",
     "rootDir": "src",
@@ -28,8 +27,5 @@
   ],
   "exclude": [
     "node_modules",
-  ],
-  "ts-node": {
-    "swc": true
-  }
+  ]
 }
