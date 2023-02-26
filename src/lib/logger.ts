@@ -1,4 +1,5 @@
 import appConfig from '@/config/app.config';
+import { LOG_DATE_FORMAT } from '@/utils/constants';
 import { existsSync, mkdirSync } from 'fs';
 import {
   createLogger,
@@ -38,7 +39,7 @@ const logFormattter = printf(({ level, message, label, timestamp }) => {
 const logger: Logger = createLogger({
   format: combine(
     label({ label: environment.getCurrentEnvironment() }),
-    timestamp({ format: 'MM-DD-YYYY HH:MM:SS' }),
+    timestamp({ format: LOG_DATE_FORMAT }),
     json(),
     prettyPrint({ colorize: true }),
     logFormattter
