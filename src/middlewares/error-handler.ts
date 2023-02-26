@@ -12,7 +12,6 @@ interface ErrorBody {
   stack?: string;
 }
 
-// 'type cheking test'
 const errorHandler = (
   err: ApiError,
   req: Request,
