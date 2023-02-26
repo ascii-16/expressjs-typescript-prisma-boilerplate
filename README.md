@@ -187,6 +187,18 @@ modules | Contains the main modules of the app, each of which can contain submod
 types | Contains type definitions which can be used throughout the app to ensure type safety and consistency.
 utils | Contains utility functions or classes that can be used throughout the app for common tasks, such as string manipulation, date formatting, or math calculations. These functions may not fit neatly into any of the other folders, but are still useful components of the app.
 
+## Typescript configuration
+
+This repo contains four tsconfig files.
+
+* `tsconfig.json`: Contains the base configuration options that apply to all TypeScript files in your project, such as the target ECMAScript version, the module system to use, the paths to the source files and output directories, and various compiler options related to type-checking, strictness, and optimization.
+
+* `tsconfig.build.json`: This configuration file is intended to be used for building your project for production. It extends the base configuration defined in tsconfig.json, but may override some options to optimize the build process or reduce bundle size. This configuration may also exclude certain files or directories that are not needed in the production build.
+
+* `tsconfig.dev.json`: This configuration file is intended to be used for development purposes. It extends the base configuration defined in tsconfig.json, but may enable additional options or checks that are useful during development, and also contains the configuration for ts-node-dev.
+
+* `tsconfig.eslint.json`: This configuration file is intended to be used by Eslint. It may contain TypeScript-specific ESLint rules and configuration options, which may differ from the regular TypeScript configuration. This file may also extend the base TypeScript configuration from tsconfig.json to ensure that the TypeScript code analyzed by ESLint matches the actual compilation output.
+
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
