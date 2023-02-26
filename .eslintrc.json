@@ -1,36 +1,36 @@
 {
-    "env": {
-        "node": true,
-        "es2021": true
-    },
-    "plugins": [
-        "unicorn",
-        "prettier"
+  "env": {
+    "node": true,
+    "es2021": true
+  },
+  "plugins": [
+    "unicorn",
+    "prettier"
+  ],
+  "extends": [
+    "standard-with-typescript",
+    "prettier"
+  ],
+  "overrides": [],
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module",
+    "project": "./tsconfig.eslint.json"
+  },
+  "rules": {
+    "prettier/prettier": [
+      "error"
     ],
-    "extends": [
-        "standard-with-typescript",
-        "prettier"
+    "unicorn/filename-case": [
+      "warn",
+      {
+        "case": "kebabCase"
+      }
     ],
-    "overrides": [],
-    "parserOptions": {
-        "ecmaVersion": "latest",
-        "sourceType": "module",
-        "project": "./tsconfig.eslint.json"
-    },
-    "rules": {
-        "prettier/prettier": [
-            "error"
-        ],
-        "unicorn/filename-case": [
-            "warn",
-            {
-                "case": "kebabCase"
-            }
-        ],
-        "@typescript-eslint/explicit-function-return-type": "off",
-        "@typescript-eslint/no-extraneous-class": "off",
-        "@typescript-eslint/no-misused-promises": "off",
-        "@typescript-eslint/strict-boolean-expressions": "off"
-    },
-    "ignorePatterns": []
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/no-extraneous-class": "off",
+    "@typescript-eslint/no-misused-promises": "off",
+    "@typescript-eslint/strict-boolean-expressions": "off"
+  },
+  "ignorePatterns": []
 }
