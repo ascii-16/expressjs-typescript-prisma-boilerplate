@@ -5,6 +5,8 @@ const config: Config = {
   preset: 'ts-jest',
   testEnvironment: 'node',
   testRegex,
+  verbose: true,
+  notify: true,
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/src/$1',
   },

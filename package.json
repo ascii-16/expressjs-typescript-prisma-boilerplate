@@ -19,7 +19,10 @@
     "prisma:studio": "npx prisma studio",
     "check:types": "tsc --noEmit",
     "commit": "git-cz",
-    "test": "jest --notify --verbose"
+    "test": "jest",
+    "test:e2e": "jest -c jest.config.e2e.ts",
+    "test:integration": "jest -c jest.config.integration.ts",
+    "test:unit": "jest -c jest.config.unit.ts"
   },
   "prisma": {
     "seed": "ts-node-dev -r tsconfig-paths/register --transpile-only prisma/seed.ts"
