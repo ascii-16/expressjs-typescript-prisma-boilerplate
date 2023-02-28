@@ -134,9 +134,9 @@ Following are the list of predefined scripts available in the app
 | prisma:migrate  | Runs prisma db migration                      | `npm run prisma:migrate`  |
 | prisma:seed     | Seeds db                                      | `npm run prisma:seed`     |
 | prisma:studio   | Opens prisma studio                           | `npm run prisma:studio`   |
-| lint            | Lints the app with eslint                     | `npm run lint`            |
-| lint:fix        | Lints and fixes the app with eslint           | `npm run lint:fix`        |
-| format          | Formats the app with eslint                   | `npm run format`          |
+| lint            | Lints the files with eslint                   | `npm run lint`            |
+| lint:fix        | Lints and fixes files with eslint             | `npm run lint:fix`        |
+| format          | Formats files with prettier                   | `npm run format`          |
 | commit          | Opens commitizen                              | `npm run commit`          |
 | test            | Runs tests                                    | `npm run test`            |
 | test:e2e        | Runs e2e tests                                | `npm run test:e23`        |
