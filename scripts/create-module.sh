@@ -8,5 +8,5 @@ echo "✅ Created module folder";
 
 # Creating files
 cd src/modules/"$module_name" || exit;
-touch "$module_name".controller.ts "$module_name".service.ts "$module_name".routes.ts;
+touch "$module_name".controller.ts "$module_name".service.ts "$module_name".route.ts;
 echo "✅ Created controller, service, and routes";
