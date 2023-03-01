@@ -38,7 +38,7 @@ const logFormattter = printf(({ level, message, label, timestamp }) => {
 });
 const logger: Logger = createLogger({
   format: combine(
-    label({ label: environment.getCurrentEnvironment() }),
+    label({ label: environment.env }),
     timestamp({ format: LOG_DATE_FORMAT }),
     json(),
     prettyPrint({ colorize: true }),
