@@ -150,6 +150,8 @@ Apart from this, there are some utitility scripts defined in Makefile
 
 `make module`: Creates a new folder in modules folder and creates controller, route and service files inside the folder
 
+`make env`: Creates env file from .env.example with the values provided
+
 ## Folder structure
 
 ```

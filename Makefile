@@ -28,4 +28,6 @@ test:
 	@bash scripts/run-test.sh
 module:
 	@bash scripts/create-module.sh
+env:
+	@bash scripts/create-env.sh
 	
