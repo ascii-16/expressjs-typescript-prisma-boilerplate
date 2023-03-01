@@ -147,6 +147,7 @@ Following are the list of predefined scripts available in the app
 Apart from this, there are some utitility scripts defined in Makefile
 
 `make test`: Easier way to run tests
+
 `make module`: Creates a new folder in modules folder and creates controller, route and service files inside the folder
 
 ## Folder structure
