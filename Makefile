@@ -1,7 +1,7 @@
 #!/bin/bash
 TEST_TARGET := e2e integration unit
 
-.SILENT: test
+.PHONY: build test module
 
 setup:
 	npm i
