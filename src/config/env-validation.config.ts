@@ -1,5 +1,5 @@
-import { Environments } from '@/enums/environment.enum';
 import { str, num } from 'envalid';
+import { Environments } from '@/enums/environment.enum';
 
 const envValidationConfig = {
   NODE_ENV: str({

@@ -1,5 +1,3 @@
-import appConfig from '@/config/app.config';
-import { LOG_DATE_FORMAT } from '@/utils/constants';
 import { existsSync, mkdirSync } from 'fs';
 import {
   createLogger,
@@ -10,6 +8,8 @@ import {
   transports,
 } from 'winston';
 import environment from './environment';
+import { LOG_DATE_FORMAT } from '@/utils/constants';
+import appConfig from '@/config/app.config';
 
 const {
   logs: { dir: logDir, logFile, errorLogFile },

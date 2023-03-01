@@ -1,9 +1,9 @@
 import { config as configDotenv } from 'dotenv';
-import server from './app';
 import { PrismaClient } from '@prisma/client';
-import environment from '@/lib/environment';
+import server from './app';
 import { printAppInfo } from './utils/print-app-info';
 import appConfig from './config/app.config';
+import environment from '@/lib/environment';
 
 configDotenv();
 

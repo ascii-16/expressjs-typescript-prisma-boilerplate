@@ -1,8 +1,8 @@
 import { Router } from 'express';
+import Controller from './users.controller';
 import { CreateUserDto } from '@/dto/user.dto';
 import RequestValidator from '@/middlewares/request-validator';
 import { verifyAuthToken } from '@/middlewares/auth';
-import Controller from './users.controller';
 
 const users: Router = Router();
 const controller = new Controller();
