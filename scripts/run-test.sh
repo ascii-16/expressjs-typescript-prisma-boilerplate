@@ -1,10 +1,13 @@
 #!/bin/bash
 
-echo -e "Enter test type
-	\n\ra: All
-	\re: e2e
-	\ri: integration
-	\ru: unit
+GREEN='\033[00;32m'
+WHITE_BOLD='\033[01;37m'
+
+echo -e "${WHITE_BOLD}Enter test type
+	\n\r› Press ${GREEN}a${WHITE_BOLD} to run all tests.
+	\r› Press ${GREEN}e${WHITE_BOLD} to run e2e tests.
+	\r› Press ${GREEN}i${WHITE_BOLD} to run integration tests.
+	\r› Press ${GREEN}u${WHITE_BOLD} to run unit tests.
 	\n\rEnter a choice:
 ";
 
