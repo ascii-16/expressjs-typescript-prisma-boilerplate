@@ -4,11 +4,10 @@ TEST_TARGET := e2e integration unit
 .PHONY: build test module
 
 setup:
-	npm i
 	@echo "\n✅ Installed dependencies\n"
 	cp .env.example .env
+	@bash scripts/create-env.sh
 	@echo "\n✅ Created env file\n"
-	@echo "Replace the variables in env file with your credentials\n\nThen run:: make prisma\n"
 prisma:
 	npm run prisma:generate
 	@echo "✅ Generated prisma types\n"
