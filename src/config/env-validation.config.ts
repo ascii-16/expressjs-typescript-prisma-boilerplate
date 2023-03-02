@@ -1,4 +1,5 @@
 import { str, num } from 'envalid';
+import appConfig from './app.config';
 import { Environments } from '@/enums/environment.enum';
 
 const envValidationConfig = {
@@ -6,7 +7,7 @@ const envValidationConfig = {
     default: Environments.DEV,
     choices: [...Object.values(Environments)],
   }),
-  PORT: num({ default: 5000 }),
+  PORT: num({ default: appConfig.defaultPort }),
   APP_BASE_URL: str(),
   DATABASE_URL: str(),
 };

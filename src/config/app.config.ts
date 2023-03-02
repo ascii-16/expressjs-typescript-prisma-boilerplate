@@ -1,3 +1,5 @@
+import { DEFAULT_PORT } from '@/utils/constants';
+
 interface AppConfig {
   api: {
     /**
@@ -37,6 +39,7 @@ interface AppConfig {
      */
     errorLogFile: string;
   };
+  defaultPort: number;
 }
 
 const appConfig: AppConfig = {
@@ -53,6 +56,7 @@ const appConfig: AppConfig = {
     logFile: 'app.log',
     errorLogFile: 'error.log',
   },
+  defaultPort: DEFAULT_PORT,
 };
 
 export default appConfig;
