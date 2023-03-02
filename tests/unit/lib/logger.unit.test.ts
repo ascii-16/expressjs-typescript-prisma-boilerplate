@@ -1,7 +1,7 @@
 import { type LogEntry } from 'winston';
 import logger from '../../../src/lib/logger';
 
-describe('[unit] - logger', () => {
+describe('[Unit] - logger', () => {
   jest.mock('../../../src/lib/logger');
 
   it('should log info log', () => {

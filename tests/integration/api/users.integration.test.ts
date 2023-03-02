@@ -29,7 +29,7 @@ afterAll(async () => {
   await prismaClient.$disconnect();
 });
 
-test('[Integration] POST: /users/create', async () => {
+test('[Integration] - POST: /users/create', async () => {
   jest.resetModules();
   jest.mock('../../../src/app');
 
