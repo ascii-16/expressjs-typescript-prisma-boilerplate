@@ -6,6 +6,7 @@ import { EnvironmentFile, Environments } from '@/enums/environment.enum';
 import envValidationConfig from '@/config/env-validation.config';
 import { envFileNotFoundError } from '@/utils/helper';
 import { type CommonEnvKeys } from '@/types/environment.type';
+import appConfig from '@/config/app.config';
 
 export interface IEnvironment {
   getCurrentEnvironment: () => string;
@@ -22,7 +23,7 @@ class Environment implements IEnvironment {
   private _appUrl: string;
 
   constructor() {
-    this.port = +process.env.PORT;
+    this.port = +process.env.PORT ?? appConfig.defaultPort;
     this.setEnvironment(process.env.NODE_ENV ?? Environments.DEV);
   }
 
@@ -101,4 +102,5 @@ class Environment implements IEnvironment {
   }
 }
 
+export { Environment };
 export default new Environment();
