@@ -1,7 +1,7 @@
 #!/bin/bash
 TEST_TARGET := e2e integration unit
 
-.PHONY: build test module
+.PHONY: build test module prisma
 
 setup:
 	@echo "\n✅ Installed dependencies\n"
