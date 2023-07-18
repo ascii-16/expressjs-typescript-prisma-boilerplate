@@ -16,6 +16,7 @@ const seedUsers = async (): Promise<void> => {
   );
   const users = await prisma.users.createMany({ data: fakeUsers });
   logger.info(`
+    \r${HR('white', '-', 30)}
     \rSeed completed for model: user
     \rcount: ${users.count}
     \r${HR('white', '-', 30)}
@@ -27,14 +28,16 @@ async function seed(): Promise<void> {
 }
 
 async function main(): Promise<void> {
+  let isError: boolean = false;
   try {
     await seed();
-    await prisma.$disconnect();
   } catch (e) {
+    isError = true;
     logger.error(e);
+  } finally {
     await prisma.$disconnect();
-    process.exit(1);
+    process.exit(isError ? 1 : 0);
   }
 }
 
-main().catch((e) => logger.error(e));
+void main();
