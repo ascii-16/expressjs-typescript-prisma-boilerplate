@@ -10,6 +10,7 @@ import expressJSDocSwaggerConfig from './config/express-jsdoc-swagger.config';
 import appConfig from './config/app.config';
 import errorHandler from '@/middlewares/error-handler';
 import routes from '@/modules/index';
+import prismaClient from '@/lib/prisma';
 
 class App {
   public express: express.Application;
@@ -53,8 +54,17 @@ class App {
   private initializeDocs(): void {
     expressJSDocSwagger(this.express)(expressJSDocSwaggerConfig);
   }
+
+  public async connectPrisma(): Promise<void> {
+    await prismaClient.$connect();
+  }
 }
 
-const app = new App().express;
+const app = new App();
+const server = app.express;
 
-export default app;
+app.connectPrisma().catch((e) => {
+  throw e;
+});
+
+export default server;
