@@ -14,13 +14,13 @@ export default class RequestValidator {
           convertedObject as Record<string, unknown>
         );
         if (!errors.length) next();
-        let rawErrors: string[] = [];
-        for (const errorItem of errors) {
-          rawErrors = rawErrors.concat(
-            ...rawErrors,
-            Object.values(errorItem.constraints ?? [])
-          );
-        }
+        const rawErrors: string[] = [
+          ...new Set([
+            ...errors.flatMap((error) =>
+              Object.values(error.constraints ?? [])
+            ),
+          ]),
+        ];
         logger.error(rawErrors);
         next(new HttpBadRequestError(validationErrorText, rawErrors));
       } catch (e) {
