@@ -2,9 +2,9 @@ import { existsSync, mkdirSync } from 'fs';
 import {
   createLogger,
   format,
-  transport,
+  type transport,
   type Logger,
-  LogEntry,
+  type LogEntry,
   transports,
 } from 'winston';
 import environment from './environment';
@@ -42,17 +42,17 @@ const logger: Logger = createLogger({
     timestamp({ format: LOG_DATE_FORMAT }),
     json(),
     prettyPrint({ colorize: true }),
-    logFormattter
+    logFormattter,
   ),
   transports: logTransports,
 });
 
 export const logWithoutConsole = (logEntry: LogEntry) => {
   const consoleTransport = logger.transports.find(
-    (transport) => transport instanceof transports.Console
+    (transport) => transport instanceof transports.Console,
   );
   const fileTransport = logger.transports.find(
-    (transport) => transport instanceof transports.File
+    (transport) => transport instanceof transports.File,
   );
 
   if (!fileTransport) {
