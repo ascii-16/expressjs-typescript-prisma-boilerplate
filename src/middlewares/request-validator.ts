@@ -7,23 +7,25 @@ import logger from '@/lib/logger';
 export default class RequestValidator {
   static validate = <T>(classInstance: ClassConstructor<T>) => {
     return async (req: Request, _res: Response, next: NextFunction) => {
-      const convertedObject = plainToInstance(classInstance, req.body);
+      const validationErrorText = 'Request validation failed!';
       try {
-        await validate(convertedObject as Record<string, unknown>);
-        next();
-      } catch (errors) {
-        if (errors.length > 0) {
-          let rawErrors: string[] = [];
-          for (const errorItem of errors) {
-            rawErrors = rawErrors.concat(
-              ...rawErrors,
-              Object.values(errorItem.constraints ?? [])
-            );
-          }
-          const validationErrorText = 'Request validation failed!';
-          logger.error(rawErrors);
-          next(new HttpBadRequestError(validationErrorText, rawErrors));
+        const convertedObject = plainToInstance(classInstance, req.body);
+        const errors = await validate(
+          convertedObject as Record<string, unknown>
+        );
+        if (!errors.length) next();
+        let rawErrors: string[] = [];
+        for (const errorItem of errors) {
+          rawErrors = rawErrors.concat(
+            ...rawErrors,
+            Object.values(errorItem.constraints ?? [])
+          );
         }
+        logger.error(rawErrors);
+        next(new HttpBadRequestError(validationErrorText, rawErrors));
+      } catch (e) {
+        logger.error(e);
+        next(new HttpBadRequestError(validationErrorText, [e.message]));
       }
     };
   };
