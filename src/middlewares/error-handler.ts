@@ -16,7 +16,7 @@ const errorHandler = (
   err: ApiError,
   req: Request,
   res: Response,
-  next: NextFunction,
+  next: NextFunction
 ) => {
   logger.error(`Request Error:
         \nError:\n${JSON.stringify(err)}

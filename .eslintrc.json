@@ -9,7 +9,7 @@
   ],
   "extends": [
     "standard-with-typescript",
-    "prettier"
+    "plugin:prettier/recommended"
   ],
   "overrides": [],
   "parserOptions": {
