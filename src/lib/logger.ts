@@ -2,9 +2,9 @@ import { existsSync, mkdirSync } from 'fs';
 import {
   createLogger,
   format,
-  transport,
+  type transport,
   type Logger,
-  LogEntry,
+  type LogEntry,
   transports,
 } from 'winston';
 import environment from './environment';

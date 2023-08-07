@@ -1,5 +1,5 @@
 import { HttpStatusCode } from 'axios';
-import { Response } from 'express';
+import { type Response } from 'express';
 import environment from './environment';
 import logger from './logger';
 

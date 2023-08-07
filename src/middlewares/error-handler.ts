@@ -1,7 +1,7 @@
 import util from 'util';
 import { type NextFunction, type Request, type Response } from 'express';
 import { HttpStatusCode } from 'axios';
-import { ApiError } from '@/lib/errors';
+import { type ApiError } from '@/lib/errors';
 import logger from '@/lib/logger';
 import environment from '@/lib/environment';
 

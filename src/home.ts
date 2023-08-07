@@ -1,5 +1,5 @@
 import * as path from 'path';
-import { Router, Request, Response } from 'express';
+import { Router, type Request, type Response } from 'express';
 
 const home: Router = Router();
 

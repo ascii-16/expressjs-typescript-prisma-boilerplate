@@ -46,17 +46,24 @@ This repo is created as a template repo so that [creating new repo from this tem
 
 ## Required Stack
 
-| Tool       | Required version |
+| Tool       | Version          |
 |------------|------------------|
 | NodeJS     | >=16             |
 | Typescript | >=4\.9\.4        |
+
+## Current Stack
+
+| Tool       |  Version         |
+|------------|------------------|
+| NodeJS     | 18               |
+| Typescript | 5                |
 
 ## Clone
 
 Clone the project
 
 ```bash
-  git clone https://github.com/akhil-neoito/expressjs-typescript-prisma-boilerplate.git
+  git clone https://github.com/vintagegnome/expressjs-typescript-prisma-boilerplate.git
 ```
 
 Go to the project directory

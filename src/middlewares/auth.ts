@@ -1,4 +1,4 @@
-import { NextFunction, Request, Response } from 'express';
+import { type NextFunction, type Request, type Response } from 'express';
 
 export const verifyAuthToken = async (
   // Remove underscore of params once you start using them
