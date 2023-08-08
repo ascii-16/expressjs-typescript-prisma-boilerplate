@@ -1,6 +1,9 @@
 import logger from '@/lib/logger';
 
-export type DecoratorArgs<T = unknown> = [T, string, number];
+export type DefaultDecoratorArgs = [unknown];
+export type DecoratorArgs<
+  T extends DefaultDecoratorArgs = DefaultDecoratorArgs,
+> = T extends DefaultDecoratorArgs ? [string, number] : T;
 export type DecoratorFn<TArgs extends DecoratorArgs, TReturn = void> = (
   ...args: TArgs
 ) => TReturn;
@@ -21,7 +24,11 @@ export type ContextTarget<This, TReturn> = (
  * @param descriptorArgs - Arguments for the descriptor function.
  * @returns The generated decorator function.
  */
-export function createDecorator<TFnArgs, TArgs = unknown, TReturn = void>(
+export function createDecorator<
+  TFnArgs,
+  TArgs extends DefaultDecoratorArgs = DefaultDecoratorArgs,
+  TReturn = void,
+>(
   descriptorFn: DescriptorFn<TFnArgs, TReturn>,
   descriptorArgs: TFnArgs
 ): GeneratedDecorator<any> {
@@ -45,7 +52,12 @@ export function createDecorator<TFnArgs, TArgs = unknown, TReturn = void>(
  * @param descriptorArgs - Arguments for the descriptor function.
  * @returns The generated context-aware decorator.
  */
-export function createContextDecorator<This, TReturn, TFnArgs, TArgs = unknown>(
+export function createContextDecorator<
+  This,
+  TReturn,
+  TFnArgs,
+  TArgs extends DefaultDecoratorArgs = DefaultDecoratorArgs,
+>(
   context: ClassMethodDecoratorContext<This, ContextTarget<This, TReturn>>,
   _target: ContextTarget<This, TReturn>,
   descriptorFn: DescriptorFn<TFnArgs, TReturn>,
