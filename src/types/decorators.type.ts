@@ -9,7 +9,7 @@ export type DefaultDecoratorArgs = [unknown];
  */
 export type DecoratorArgs<
   T extends DefaultDecoratorArgs = DefaultDecoratorArgs,
-> = T extends [] ? [string, number] : T;
+> = T extends never[] ? [string, number] : T;
 
 /**
  * Function type definition for a decorator. This function can accept multiple arguments based on `TArgs`
