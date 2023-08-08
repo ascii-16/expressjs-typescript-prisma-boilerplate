@@ -3,20 +3,29 @@ import logger from '@/lib/logger';
 export type DefaultDecoratorArgs = [unknown];
 export type DecoratorArgs<
   T extends DefaultDecoratorArgs = DefaultDecoratorArgs,
-> = T extends DefaultDecoratorArgs ? [string, number] : T;
+> = T extends [] ? [string, number] : T;
 export type DecoratorFn<TArgs extends DecoratorArgs, TReturn = void> = (
   ...args: TArgs
 ) => TReturn;
 export type DescriptorFn<TArgs, TReturn = void> = (args: TArgs) => TReturn;
-export type GeneratedDecorator<T = unknown> = (
+export type Descriptor<
+  TArgs extends DefaultDecoratorArgs = DefaultDecoratorArgs,
+> = TypedPropertyDescriptor<DescriptorValue<TArgs>>;
+export type GeneratedDecorator<
+  T = unknown,
+  TArgs extends DefaultDecoratorArgs = DefaultDecoratorArgs,
+> = (
   target: T,
   key: string,
-  descriptor: PropertyDescriptor
-) => PropertyDescriptor;
+  descriptor: Descriptor<TArgs>
+) => Descriptor<TArgs>;
 export type ContextTarget<This, TReturn> = (
   this: This,
   ...args: DecoratorArgs
 ) => TReturn;
+export type DescriptorValue<
+  TArgs extends DefaultDecoratorArgs = DefaultDecoratorArgs,
+> = (...args: DecoratorArgs<TArgs>) => any;
 
 /**
  * Creates a decorator that wraps the original method with an additional function.
@@ -31,14 +40,14 @@ export function createDecorator<
 >(
   descriptorFn: DescriptorFn<TFnArgs, TReturn>,
   descriptorArgs: TFnArgs
-): GeneratedDecorator<any> {
-  return function (_target: any, key: string, descriptor: PropertyDescriptor) {
+): GeneratedDecorator<unknown, TArgs> {
+  return function (_target, key, descriptor) {
     const originalMethod = descriptor.value;
-    descriptor.value = async function (...args: DecoratorArgs<TArgs>) {
+    descriptor.value = async function (...args) {
       logger.info(`Executing decorator before method: ${key}`);
       descriptorFn(descriptorArgs);
       logger.info('Decorator executed');
-      return originalMethod.apply(this, args);
+      return originalMethod ? originalMethod.apply(this, args) : null;
     };
     return descriptor;
   };
@@ -62,18 +71,14 @@ export function createContextDecorator<
   _target: ContextTarget<This, TReturn>,
   descriptorFn: DescriptorFn<TFnArgs, TReturn>,
   descriptorArgs: TFnArgs
-): GeneratedDecorator<ContextTarget<This, TReturn>> {
+): GeneratedDecorator<ContextTarget<This, TReturn>, TArgs> {
   const methodName = String(context.name);
   logger.info(`Executing decorator for ${methodName}`);
-  return function (
-    _target: ContextTarget<This, TReturn>,
-    _key: string,
-    descriptor: PropertyDescriptor
-  ) {
+  return function (_target, _key, descriptor) {
     const originalMethod = descriptor.value;
-    descriptor.value = async function (...args: DecoratorArgs<TArgs>) {
+    descriptor.value = async function (...args) {
       descriptorFn(descriptorArgs);
-      return originalMethod.apply(this, args);
+      return originalMethod ? originalMethod.apply(this, args) : null;
     };
     return descriptor;
   };
