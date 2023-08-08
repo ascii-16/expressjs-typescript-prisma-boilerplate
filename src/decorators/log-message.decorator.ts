@@ -1,8 +1,8 @@
 import {
   type DescriptorFn,
-  createDecorator,
   type DefaultDecoratorArgs,
-} from '@/decorators/utils';
+} from '@/decorators/types';
+import { createDecorator } from '@/decorators/utils';
 
 interface LogMessageDecoratorArgs {
   message: string;

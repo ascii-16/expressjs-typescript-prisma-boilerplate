@@ -1,31 +1,10 @@
+import {
+  type ContextTarget,
+  type DefaultDecoratorArgs,
+  type DescriptorFn,
+  type GeneratedDecorator,
+} from './types';
 import logger from '@/lib/logger';
-
-export type DefaultDecoratorArgs = [unknown];
-export type DecoratorArgs<
-  T extends DefaultDecoratorArgs = DefaultDecoratorArgs,
-> = T extends [] ? [string, number] : T;
-export type DecoratorFn<TArgs extends DecoratorArgs, TReturn = void> = (
-  ...args: TArgs
-) => TReturn;
-export type DescriptorFn<TArgs, TReturn = void> = (args: TArgs) => TReturn;
-export type Descriptor<
-  TArgs extends DefaultDecoratorArgs = DefaultDecoratorArgs,
-> = TypedPropertyDescriptor<DescriptorValue<TArgs>>;
-export type GeneratedDecorator<
-  T = unknown,
-  TArgs extends DefaultDecoratorArgs = DefaultDecoratorArgs,
-> = (
-  target: T,
-  key: string,
-  descriptor: Descriptor<TArgs>
-) => Descriptor<TArgs>;
-export type ContextTarget<This, TReturn> = (
-  this: This,
-  ...args: DecoratorArgs
-) => TReturn;
-export type DescriptorValue<
-  TArgs extends DefaultDecoratorArgs = DefaultDecoratorArgs,
-> = (...args: DecoratorArgs<TArgs>) => any;
 
 /**
  * Creates a decorator that wraps the original method with an additional function.
