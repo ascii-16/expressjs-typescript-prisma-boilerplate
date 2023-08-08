@@ -109,17 +109,21 @@ svg.key {
 .info-text {
   font-size: 13px !important;
   color: #fff !important;
-  margin-bottom: 8px !important;
+  margin-bottom: 18px !important;
 }
 
 .leave {
   margin-top: 8px !important;
   font-size: 13px !important;
-  color: #fff !important;
+  color: #d02d7c !important;
   text-decoration: underline;
   cursor: pointer;
   letter-spacing: normal !important;
   text-transform: capitalize !important;
+}
+
+.leave:hover {
+  color: #ec529c !important;
 }
 
 .go-back-btn {
@@ -128,6 +132,7 @@ svg.key {
   border-radius: 5px;
   border: 0;
   cursor: pointer;
+  font-weight: bold;
 }
 
 /* define the keyframe animations
