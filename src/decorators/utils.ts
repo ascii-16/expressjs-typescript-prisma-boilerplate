@@ -1,19 +1,10 @@
+import {
+  type ContextTarget,
+  type DefaultDecoratorArgs,
+  type DescriptorFn,
+  type GeneratedDecorator,
+} from './types';
 import logger from '@/lib/logger';
-
-export type DecoratorArgs<T = unknown> = [T, string, number];
-export type DecoratorFn<TArgs extends DecoratorArgs, TReturn = void> = (
-  ...args: TArgs
-) => TReturn;
-export type DescriptorFn<TArgs, TReturn = void> = (args: TArgs) => TReturn;
-export type GeneratedDecorator<T = unknown> = (
-  target: T,
-  key: string,
-  descriptor: PropertyDescriptor
-) => PropertyDescriptor;
-export type ContextTarget<This, TReturn> = (
-  this: This,
-  ...args: DecoratorArgs
-) => TReturn;
 
 /**
  * Creates a decorator that wraps the original method with an additional function.
@@ -21,17 +12,21 @@ export type ContextTarget<This, TReturn> = (
  * @param descriptorArgs - Arguments for the descriptor function.
  * @returns The generated decorator function.
  */
-export function createDecorator<TFnArgs, TArgs = unknown, TReturn = void>(
+export function createDecorator<
+  TFnArgs,
+  TArgs extends DefaultDecoratorArgs = DefaultDecoratorArgs,
+  TReturn = void,
+>(
   descriptorFn: DescriptorFn<TFnArgs, TReturn>,
   descriptorArgs: TFnArgs
-): GeneratedDecorator<any> {
-  return function (_target: any, key: string, descriptor: PropertyDescriptor) {
+): GeneratedDecorator<unknown, TArgs> {
+  return function (_target, key, descriptor) {
     const originalMethod = descriptor.value;
-    descriptor.value = async function (...args: DecoratorArgs<TArgs>) {
+    descriptor.value = async function (...args) {
       logger.info(`Executing decorator before method: ${key}`);
       descriptorFn(descriptorArgs);
       logger.info('Decorator executed');
-      return originalMethod.apply(this, args);
+      return originalMethod ? originalMethod.apply(this, args) : null;
     };
     return descriptor;
   };
@@ -45,23 +40,24 @@ export function createDecorator<TFnArgs, TArgs = unknown, TReturn = void>(
  * @param descriptorArgs - Arguments for the descriptor function.
  * @returns The generated context-aware decorator.
  */
-export function createContextDecorator<This, TReturn, TFnArgs, TArgs = unknown>(
+export function createContextDecorator<
+  This,
+  TReturn,
+  TFnArgs,
+  TArgs extends DefaultDecoratorArgs = DefaultDecoratorArgs,
+>(
   context: ClassMethodDecoratorContext<This, ContextTarget<This, TReturn>>,
   _target: ContextTarget<This, TReturn>,
   descriptorFn: DescriptorFn<TFnArgs, TReturn>,
   descriptorArgs: TFnArgs
-): GeneratedDecorator<ContextTarget<This, TReturn>> {
+): GeneratedDecorator<ContextTarget<This, TReturn>, TArgs> {
   const methodName = String(context.name);
   logger.info(`Executing decorator for ${methodName}`);
-  return function (
-    _target: ContextTarget<This, TReturn>,
-    _key: string,
-    descriptor: PropertyDescriptor
-  ) {
+  return function (_target, _key, descriptor) {
     const originalMethod = descriptor.value;
-    descriptor.value = async function (...args: DecoratorArgs<TArgs>) {
+    descriptor.value = async function (...args) {
       descriptorFn(descriptorArgs);
-      return originalMethod.apply(this, args);
+      return originalMethod ? originalMethod.apply(this, args) : null;
     };
     return descriptor;
   };
