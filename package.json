@@ -1,6 +1,6 @@
 {
   "name": "expressjs-typescript-prisma-boilerplate",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "expressjs typescript boilerplate with prisma",
   "main": "index.ts",
   "scripts": {
