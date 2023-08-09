@@ -3,7 +3,7 @@ import {
   type DefaultDecoratorArgs,
   type DescriptorFn,
   type GeneratedDecorator,
-} from './types';
+} from '@/types/decorators.type';
 import logger from '@/lib/logger';
 
 /**
