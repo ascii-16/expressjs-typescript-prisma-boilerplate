@@ -60,11 +60,4 @@ class App {
   }
 }
 
-const app = new App();
-const server = app.express;
-
-app.connectPrisma().catch((e) => {
-  throw e;
-});
-
-export default server;
+export default App;
