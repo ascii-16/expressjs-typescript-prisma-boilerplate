@@ -37,8 +37,6 @@ const errorHandler = (
   }
 
   res.status(status).send(errorBody);
-
-  next();
 };
 
 export default errorHandler;
