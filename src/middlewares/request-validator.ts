@@ -13,7 +13,10 @@ export default class RequestValidator {
         const errors = await validate(
           convertedObject as Record<string, unknown>
         );
-        if (!errors.length) next();
+        if (!errors.length) {
+          next();
+          return;
+        }
         const rawErrors: string[] = [
           ...new Set([
             ...errors.flatMap((error) =>
