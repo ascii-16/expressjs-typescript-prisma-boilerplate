@@ -20,7 +20,6 @@ cd src/modules/"$module_name" || exit
 touch "$module_name".controller.ts "$module_name".service.ts "$module_name".route.ts
 echo -e "Created:
   $(green_bold ""$module_name".controller.ts")
-  $(green_bold ""$module_name".controller.ts")
   $(green_bold ""$module_name".service.ts")
   $(green_bold ""$module_name".route.ts")
 "
